@@ -3,7 +3,7 @@
 using namespace std;
 
 /**
- * Iterative implementation of binary search algorithm
+ * Recursive implementation of binary search algorithm
  * @param array array to be searched
  * @param target element to be searched
  * @param left left index of the array
@@ -11,33 +11,34 @@ using namespace std;
  * @return index of the element if found, otherwise -1
  */
 int binarySearch(int array[], int target, int left, int right) {
-    while (left <= right) {
-
-        /**
-         * We are using following formula for calculating mid index
-         * to avoid integer overflow:
-         * mid = left + (right - left) / 2
-         */
-        int mid = left + (right - left) / 2;
-
-        // Checking if target is present at middle index
-        if (array[mid] == target) {
-            return mid;
-        }
-
-        /**
-         * If target is greater, ignore left half
-         * of the array, otherwise ignore right half
-         * of the array
-         */
-        if (array[mid] < target) {
-            left = mid + 1;
-        } else {
-            right = mid - 1;
-        }
+    if (left > right) {
+        return -1; // element not found
     }
 
-    return -1; // element not found
+    /**
+     * We are using following formula for calculating mid index
+     * to avoid integer overflow:
+     * mid = left + (right - left) / 2
+     */
+    int mid = left + (right - left) / 2;
+
+    // Checking if target is present at middle index
+    if (array[mid] == target) {
+        return mid;
+    }
+
+    /**
+     * If target is greater, ignore left half
+     * of the array, otherwise ignore right half
+     * of the array and make a recursive call on the
+     * left half of the array from mid + 1 to right
+     * and vice versa for the right half
+     */
+    if (array[mid] < target) {
+        return binarySearch(array, target, mid + 1, right);
+    } else {
+        return binarySearch(array, target, left, mid - 1);
+    }
 }
 
 int main() {
