@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <stdio.h>
 
 /**
  * Recursive implementation of binary search algorithm
@@ -40,30 +38,59 @@ int binarySearch(int array[], int target, int left, int right) {
     return -1; // element not found
 }
 
+/**
+ * Bubble Sort algorithm implementation
+ * @param array array to be sorted
+ * @param size size of the array
+ */
+void bubbleSort(int array[], int size) {
+    /**
+     * Running two loops: one to iterate over the array
+     * and the other to keep track on the number of
+     * iterations performed
+     */
+    for (int step = 0; step < size - 1; ++step) {
+        for (int i = 0; i < size - step - 1; ++i) {
+            if (array[i] > array[i + 1]) {
+
+                /**
+                 * Swapping elements if they are not in the intended order:
+                 *  - array[i] is greater than the next element
+                 *  - Swapping it
+                 *  - Otherwise skipping to next element
+                 */
+                int temp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
+            }
+        }
+    }
+}
+
 int main() {
     int arraySize;
-    cout << "Enter the size of the array: ";
-    cin >> arraySize;
+    printf("Enter the size of the array: ");
+    scanf("%d", &arraySize);
 
     int array[arraySize];
-    cout << "Enter the elements of the array: ";
+    printf("Enter the elements of the array: ");
     for (int i = 0; i < arraySize; i++) {
-        cin >> array[i];
+        scanf("%d", &array[i]);
     }
 
-    cout << "Sorting the array..." << endl;
-    sort(array, array + arraySize);
+    printf("Sorting the array...\n");
+    bubbleSort(array, arraySize);
 
-    cout << "Sorted array: ";
+    printf("Sorted array: ");
     for (int i = 0; i < arraySize; i++) {
-        cout << array[i] << " ";
+        printf("%d ", array[i]);
     }
 
-    cout << endl;
+    printf("\n");
 
     int target;
-    cout << "Enter the element to be searched: ";
-    cin >> target;
+    printf("Enter the element to be searched: ");
+    scanf("%d", &target);;
 
     /**
      * Calling binarySearch function to find the index of the element
@@ -77,9 +104,9 @@ int main() {
      * be the index of the element in the array
      */
     if (result == -1) {
-        cout << "Element not found in the array" << endl;
+        printf("Element not found in the array\n");
     } else {
-        cout << "Element found at index " << result << endl;
+        printf("Element found at index %d\n", result);
     }
 
     return 0;
