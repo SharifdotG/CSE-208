@@ -36,9 +36,9 @@ int main() {
     int result = ternarySearch(array, target, 0, arraySize - 1);
 
     if (result == -1) {
-        cout << "Element not found in the array" << endl;
+        printf("Element not found in the array\n");
     } else {
-        cout << "Element found at index " << result << endl;
+        printf("Element found at index %d\n", result);
     }
 
     return 0;

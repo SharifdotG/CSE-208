@@ -3,17 +3,17 @@
 using namespace std;
 
 int binarySearch(int array[], int target, int left, int right) {
-    if (right >= left) {
+    while (left <= right) {
         int mid = left + (right - left) / 2;
 
         if (target == array[mid]) {
             return mid;
         }
 
-        if (target < array[mid]) {
-            return binarySearch(array, target, left, mid - 1);
+        if (target > array[mid]) {
+            left = mid + 1;
         } else {
-            return binarySearch(array, target, mid + 1, right);
+            right = mid - 1;
         }
     }
 
@@ -28,9 +28,9 @@ int main() {
     int result = binarySearch(array, target, 0, arraySize - 1);
 
     if (result == -1) {
-        cout << "Element not found in the array" << endl;
+        printf("Element not found in the array\n");
     } else {
-        cout << "Element found at index " << result << endl;
+        printf("Element found at index %d\n", result);
     }
 
     return 0;
