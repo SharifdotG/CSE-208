@@ -16,7 +16,7 @@ int knapsack(int weights[], int values[], int n, int capacity) {
             }
         }
     }
-    // Main code ends here after writing "return dp[n][capacity]; }"!
+    // Main code ends here after writing "return dp[n][capacity]; }"
 
     // This is just for printing the DP table
     cout << "DP Table: " << endl;
