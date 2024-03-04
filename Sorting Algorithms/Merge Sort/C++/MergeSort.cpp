@@ -34,14 +34,12 @@ void merge(int array[], int left, int mid, int right) {
 
     while (i < range1) {
         array[k] = leftArray[i];
-        i++;
-        k++;
+        i++, k++;
     }
 
     while (j < range2) {
         array[k] = rightArray[j];
-        j++;
-        k++;
+        j++, k++;
     }
 }
 
