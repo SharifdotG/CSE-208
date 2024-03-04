@@ -36,7 +36,7 @@ int main() {
     int weights[] = {2, 3, 4, 5};
     int values[] = {3, 4, 5, 6};
     int capacity = 5;
-    int n = sizeof(values) / sizeof(values[0]);
+    int n = sizeof(values)/sizeof(values[0]);
 
     cout << knapsack(weights, values, n, capacity) << endl;
 
