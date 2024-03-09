@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <stdio.h>
 
 int partition(int array[], int left, int right) {
     int pivot = array[right];
@@ -9,11 +7,16 @@ int partition(int array[], int left, int right) {
     for (int j = left; j < right; j++) {
         if (array[j] < pivot) {
             i++;
-            swap(array[i], array[j]);
+            
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
         }
     }
 
-    swap(array[i + 1], array[right]);
+    int temp = array[i + 1];
+    array[i + 1] = array[right];
+    array[right] = temp;
 
     return i + 1;
 }

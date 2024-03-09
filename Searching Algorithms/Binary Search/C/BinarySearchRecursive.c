@@ -1,19 +1,17 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <stdio.h>
 
 int binarySearch(int array[], int target, int left, int right) {
-    while (left <= right) {
+    if (right >= left) {
         int mid = left + (right - left) / 2;
 
         if (target == array[mid]) {
             return mid;
         }
 
-        if (target > array[mid]) {
-            left = mid + 1;
+        if (target < array[mid]) {
+            return binarySearch(array, target, left, mid - 1);
         } else {
-            right = mid - 1;
+            return binarySearch(array, target, mid + 1, right);
         }
     }
 

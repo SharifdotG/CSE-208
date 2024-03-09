@@ -1,9 +1,7 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <stdio.h>
 
 int ternarySearch(int array[], int target, int left, int right) {
-    while (right >= left) {
+    if (right >= left) {
         int mid1 = left + (right - left) / 3;
         int mid2 = right - (right - left) / 3;
 
@@ -16,12 +14,11 @@ int ternarySearch(int array[], int target, int left, int right) {
         }
 
         if (target < array[mid1]) {
-            right = mid1 - 1;
+            return ternarySearch(array, target, left, mid1 - 1);
         } else if (target > array[mid2]) {
-            left = mid2 + 1;
+            return ternarySearch(array, target, mid2 + 1, right);
         } else {
-            left = mid1 + 1;
-            right = mid2 - 1;
+            return ternarySearch(array, target, mid1 + 1, mid2 - 1);
         }
     }
 
@@ -36,9 +33,9 @@ int main() {
     int result = ternarySearch(array, target, 0, arraySize - 1);
 
     if (result == -1) {
-        cout << "Element not found in the array" << endl;
+        printf("Element not found in the array\n");
     } else {
-        cout << "Element found at index " << result << endl;
+        printf("Element found at index %d\n", result);
     }
 
     return 0;

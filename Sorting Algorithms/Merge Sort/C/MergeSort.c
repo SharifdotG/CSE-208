@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <stdio.h>
 
 void merge(int array[], int left, int mid, int right) {
     int i, j, k;

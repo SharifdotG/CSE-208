@@ -1,6 +1,8 @@
-#include <bits/stdc++.h>
+#include <stdio.h>
 
-using namespace std;
+int max(int a, int b) {
+    return (a > b) ? a : b;
+}
 
 int knapsack(int weights[], int values[], int n, int capacity) {
     int dp[n + 1][capacity + 1];
@@ -19,15 +21,15 @@ int knapsack(int weights[], int values[], int n, int capacity) {
     // Main code ends here after writing "return dp[n][capacity]; }"
 
     // This is just for printing the DP table
-    cout << "DP Table: " << endl;
+    printf("DP Table: \n");
     for (int i = 0; i <= n; i++) {
         for (int j = 0; j <= capacity; j++) {
-            cout << dp[i][j] << " ";
+            printf("%d ", dp[i][j]);
         }
-        cout << endl;
+        printf("\n");
     }
-
-    cout << "Maximum value: ";
+    
+    printf("Maximum value: ");
     return dp[n][capacity];
 }
 
@@ -37,7 +39,7 @@ int main() {
     int capacity = 5;
     int n = sizeof(values) / sizeof(values[0]);
 
-    cout << knapsack(weights, values, n, capacity) << endl;
+    printf("%d\n", knapsack(weights, values, n, capacity));
 
     return 0;
 }
@@ -45,9 +47,9 @@ int main() {
 /* Output:
 DP Table: 
 0 0 0 0 0 0 
-0 0 3 3 3 3
-0 0 3 4 4 7
-0 0 3 4 5 7
-0 0 3 4 5 7
+0 0 3 3 3 3 
+0 0 3 4 4 7 
+0 0 3 4 5 7 
+0 0 3 4 5 7 
 Maximum value: 7
 */
