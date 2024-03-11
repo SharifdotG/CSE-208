@@ -12,19 +12,19 @@ bool compare(Item a, Item b) {
     return r1 > r2;
 }
 
-double fractionalKnapsack(int W, Item arr[], int n) {
-    sort(arr, arr + n, compare);
+double fractionalKnapsack(int W, Item array[], int n) {
+    sort(array, array + n, compare);
 
-    int curWeight = 0;
+    int currentWeight = 0;
     double finalValue = 0.0;
     
     for (int i = 0; i < n; i++) {
-        if (curWeight + arr[i].weight <= W) {
-            curWeight += arr[i].weight;
-            finalValue += arr[i].value;
+        if (currentWeight + array[i].weight <= W) {
+            currentWeight += array[i].weight;
+            finalValue += array[i].value;
         } else {
-            int remain = W - curWeight;
-            finalValue += arr[i].value * ((double) remain / arr[i].weight);
+            int remain = W - currentWeight;
+            finalValue += array[i].value * ((double) remain / array[i].weight);
             break;
         }
     }
@@ -34,10 +34,10 @@ double fractionalKnapsack(int W, Item arr[], int n) {
 
 int main() {
     int W = 50;
-    Item arr[] = {{60, 10}, {100, 20}, {120, 30}};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    Item array[] = {{60, 10}, {100, 20}, {120, 30}};
+    int n = sizeof(array) / sizeof(array[0]);
 
-    cout << "Maximum value we can obtain: " << fractionalKnapsack(W, arr, n) << endl;
+    cout << "Maximum value we can obtain: " << fractionalKnapsack(W, array, n) << endl;
 
     return 0;
 }
