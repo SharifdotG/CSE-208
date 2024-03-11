@@ -41,3 +41,8 @@ int main() {
 
     return 0;
 }
+
+/*
+Output:
+Maximum value we can obtain: 240
+*/
