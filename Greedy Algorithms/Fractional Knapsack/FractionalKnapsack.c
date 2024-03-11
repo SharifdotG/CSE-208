@@ -1,19 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct Item {
     int value, weight;
 };
 
+int compare(const void *a, const void *b) {
+    double r1 = (double) ((struct Item *) b)->value / ((struct Item *) b)->weight;
+    double r2 = (double) ((struct Item *) a)->value / ((struct Item *) a)->weight;
+    return r1 > r2 ? 1 : 0;
+}
+
 double fractionalKnapsack(int W, struct Item array[], int n) {
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if ((double) array[j].value / array[j].weight < (double) array[j + 1].value / array[j + 1].weight) {
-                struct Item temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-            }
-        }
-    }
+    qsort(array, n, sizeof(array[0]), compare);
 
     int currentWeight = 0;
     double finalValue = 0.0;
