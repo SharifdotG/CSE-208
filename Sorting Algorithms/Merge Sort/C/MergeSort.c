@@ -1,22 +1,20 @@
 #include <stdio.h>
 
 void merge(int array[], int left, int mid, int right) {
-    int i, j, k;
-
     int range1 = mid - left + 1;
     int range2 = right - mid;
 
     int leftArray[range1], rightArray[range2];
 
-    for (i = 0; i < range1; i++) {
+    for (int i = 0; i < range1; i++) {
         leftArray[i] = array[left + i];
     }
 
-    for (j = 0; j < range2; j++) {
+    for (int j = 0; j < range2; j++) {
         rightArray[j] = array[mid + 1 + j];
     }
 
-    i = 0, j = 0, k = left;
+    int i = 0, j = 0, k = left;
 
     while (i < range1 && j < range2) {
         if (leftArray[i] <= rightArray[j]) {
@@ -70,3 +68,8 @@ int main() {
 
     return 0;
 }
+
+/*
+Output:
+5 6 7 11 12 13
+*/

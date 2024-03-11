@@ -43,3 +43,8 @@ int main() {
 
     return 0;
 }
+
+/*
+Output:
+5 6 7 11 12 13
+*/
