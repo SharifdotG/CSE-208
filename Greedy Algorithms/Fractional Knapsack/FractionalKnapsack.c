@@ -6,42 +6,40 @@ struct Item {
 };
 
 int compare(const void *a, const void *b) {
-    double r1 = (double) ((struct Item *) b)->value / ((struct Item *) b)->weight;
-    double r2 = (double) ((struct Item *) a)->value / ((struct Item *) a)->weight;
-    return r1 > r2 ? 1 : 0;
+    double ratio1 = (double) ((struct Item *) b)->value / ((struct Item *) b)->weight;
+    double ratio2 = (double) ((struct Item *) a)->value / ((struct Item *) a)->weight;
+    
+    if (ratio1 > ratio2) return 1;
+    else if (ratio1 < ratio2) return -1;
+    else return 0;
 }
 
-double fractionalKnapsack(int W, struct Item array[], int n) {
-    qsort(array, n, sizeof(array[0]), compare);
-
-    int currentWeight = 0;
-    double finalValue = 0.0;
-    
-    for (int i = 0; i < n; i++) {
-        if (currentWeight + array[i].weight <= W) {
-            currentWeight += array[i].weight;
-            finalValue += array[i].value;
-        } else {
-            int remain = W - currentWeight;
-            finalValue += array[i].value * ((double) remain / array[i].weight);
-            break;
-        }
+double fractionalKnapsack(int capacity, struct Item items[], int n, int index) {
+    if (index >= n || capacity <= 0) {
+        return 0;
     }
 
-    return finalValue;
+    if (items[index].weight <= capacity) {
+        return items[index].value + fractionalKnapsack(capacity - items[index].weight, items, n, index + 1);
+    }
+
+    double fraction = (double) capacity / items[index].weight;
+    return items[index].value * fraction + fractionalKnapsack(0, items, n, index + 1);
 }
 
 int main() {
-    int W = 50;
-    struct Item array[] = {{60, 10}, {100, 20}, {120, 30}};
-    int n = sizeof(array) / sizeof(array[0]);
+    int capacity = 50;
+    struct Item items[] = {{60, 10}, {100, 20}, {120, 30}};
+    int n = sizeof(items) / sizeof(items[0]);
 
-    printf("Maximum value we can obtain: %.2lf\n", fractionalKnapsack(W, array, n));
+    qsort(items, n, sizeof(struct Item), compare);
+
+    printf("Maximum value we can obtain: %.2lf\n", fractionalKnapsack(capacity, items, n, 0));
 
     return 0;
 }
 
 /*
 Output:
-Maximum value we can obtain: 240
+Maximum value we can obtain: 240.00
 */
