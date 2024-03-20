@@ -21,8 +21,6 @@ void jobScheduling(struct Job jobs[], int n) {
         slot[i] = 0;
     }
 
-    int maxProfit = 0;
-
     for (int i = 0; i < n; i++) {
         for (int j = fmin(n, jobs[i].deadline) - 1; j >= 0; j--) {
             if (slot[j] == 0) {
