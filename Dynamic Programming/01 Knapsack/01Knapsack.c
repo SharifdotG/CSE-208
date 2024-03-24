@@ -26,6 +26,7 @@ int knapsack(int weights[], int values[], int n, int capacity) {
         for (int j = 0; j <= capacity; j++) {
             printf("%d ", dp[i][j]);
         }
+        
         printf("\n");
     }
     
@@ -36,8 +37,8 @@ int knapsack(int weights[], int values[], int n, int capacity) {
 int main() {
     int weights[] = {2, 3, 4, 5};
     int values[] = {3, 4, 5, 6};
-    int capacity = 5;
     int n = sizeof(values) / sizeof(values[0]);
+    int capacity = 5;
 
     printf("%d\n", knapsack(weights, values, n, capacity));
 
