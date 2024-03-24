@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+{
+    "files.associations": {
+        "ostream": "cpp"
+    }
+=======
 {
     "files.associations": {
         "ostream": "cpp",
@@ -92,4 +98,5 @@
         "valarray": "cpp",
         "variant": "cpp"
     }
+>>>>>>> 95d70b4281018478501f4e0d5cc6ca409c62ae3d
 }

@@ -1,3 +1,49 @@
+<<<<<<< HEAD:Searching Algorithms/Ternary Search/C_Syntax/TernarySearchRecursive.cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int ternarySearch(int array[], int target, int left, int right) {
+    if (right >= left) {
+        int mid1 = left + (right - left) / 3;
+        int mid2 = right - (right - left) / 3;
+
+        if (target == array[mid1]) {
+            return mid1;
+        }
+
+        if (target == array[mid2]) {
+            return mid2;
+        }
+
+        if (target < array[mid1]) {
+            return ternarySearch(array, target, left, mid1 - 1);
+        } else if (target > array[mid2]) {
+            return ternarySearch(array, target, mid2 + 1, right);
+        } else {
+            return ternarySearch(array, target, mid1 + 1, mid2 - 1);
+        }
+    }
+
+    return -1;
+}
+
+int main() {
+    int array[] = {1, 3, 5, 7, 9};
+    int arraySize = sizeof(array) / sizeof(array[0]);
+    int target = 7;
+
+    int result = ternarySearch(array, target, 0, arraySize - 1);
+
+    if (result == -1) {
+        printf("Element not found in the array\n");
+    } else {
+        printf("Element found at index %d\n", result);
+    }
+
+    return 0;
+}
+=======
 #include <stdio.h>
 
 int ternarySearch(int array[], int target, int left, int right) {
@@ -45,3 +91,4 @@ int main() {
 Output:
 Element found at index 3
 */
+>>>>>>> 95d70b4281018478501f4e0d5cc6ca409c62ae3d:Searching Algorithms/Ternary Search/TernarySearch.c
