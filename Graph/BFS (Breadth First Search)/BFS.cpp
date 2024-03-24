@@ -2,9 +2,11 @@
 
 using namespace std;
 
-void bfs(int graph[5][5], int start) {
+#define V 5 // Change the value of V according to the number of vertices in the graph
+
+void bfs(int graph[V][V], int start) {
     queue<int> q;
-    bool visited[5] = {false};
+    bool visited[V] = {false};
 
     q.push(start);
     visited[start] = true;
@@ -15,7 +17,7 @@ void bfs(int graph[5][5], int start) {
 
         cout << node << " ";
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < V; i++) {
             if (graph[node][i] == 1 && !visited[i]) {
                 q.push(i);
                 visited[i] = true;
@@ -26,7 +28,7 @@ void bfs(int graph[5][5], int start) {
 
 
 int main() {
-    int graph[5][5] = {
+    int graph[V][V] = {
         {0, 1, 1, 0, 0},
         {1, 0, 1, 1, 0},
         {1, 1, 0, 0, 1},

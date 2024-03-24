@@ -1,27 +1,31 @@
 #include <stdio.h>
 
-void dfs(int g[5][5], int start, int visited[5]) {
+#define V 5 // Change the value of V according to the number of vertices in the graph
+
+void dfs(int graph[V][V], int visited[V], int start) {
     printf("%d ", start);
+
     visited[start] = 1;
 
-    for (int i = 0; i < 5; i++) {
-        if (g[start][i] == 1 && !visited[i]) {
-            dfs(g, i, visited);
+    for (int i = 0; i < V; i++) {
+        if (graph[start][i] == 1 && !visited[i]) {
+            dfs(graph, visited, i);
         }
     }
 }
 
 int main() {
-    int g[5][5] = {
+    int graph[V][V] = {
         {0, 1, 1, 0, 0},
         {1, 0, 1, 1, 0},
         {1, 1, 0, 0, 1},
         {0, 1, 0, 0, 1},
         {0, 0, 1, 1, 0}
     };
-    int visited[5] = {0};
 
-    dfs(g, 0, visited);
+    int visited[V] = {0};
+
+    dfs(graph, visited, 0);
 
     return 0;
 }

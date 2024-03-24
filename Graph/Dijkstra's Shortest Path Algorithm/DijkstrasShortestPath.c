@@ -3,51 +3,56 @@
 #include <limits.h>
 #include <stdbool.h>
 
-int minDistance(int dist[], bool sptSet[]) {
-    int min = INT_MAX, min_index;
+#define V 9 // Change V according to the number of vertices in the graph
+
+int minDistance(int distances[], bool visited[]) {
+    int minDistance = INT_MAX, minVertexIndex;
 
     for (int v = 0; v < 9; v++) {
-        if (sptSet[v] == false && dist[v] <= min) {
-            min = dist[v], min_index = v;
+        if (visited[v] == false && distances[v] <= minDistance) {
+            minDistance = distances[v];
+            minVertexIndex = v;
         }
     }
 
-    return min_index;
+    return minVertexIndex;
 }
 
-void printSolution(int dist[], int n) {
-    printf("Vertex Distance from Source\n");
-    for (int i = 0; i < 9; i++) {
-        printf("%d \t\t %d\n", i, dist[i]);
+void printSolution(int distances[]) {
+    printf("Vertex \t Distance from Source\n");
+    for (int i = 0; i < V; i++) {
+        printf("%d \t\t %d\n", i, distances[i]);
     }
 }
 
-void dijkstra(int graph[9][9], int src) {
-    int dist[9];
-    bool sptSet[9];
+void dijkstra(int graph[V][V], int source) {
+    int distances[V];
+    bool visited[V];
 
-    for (int i = 0; i < 9; i++) {
-        dist[i] = INT_MAX, sptSet[i] = false;
+    for (int i = 0; i < V; i++) {
+        distances[i] = INT_MAX;
+        visited[i] = false;
     }
 
-    dist[src] = 0;
+    distances[source] = 0;
 
-    for (int count = 0; count < 9 - 1; count++) {
-        int u = minDistance(dist, sptSet);
-        sptSet[u] = true;
+    for (int count = 0; count < V - 1; count++) {
+        int u = minDistance(distances, visited);
 
-        for (int v = 0; v < 9; v++) {
-            if (!sptSet[v] && graph[u][v] && dist[u] != INT_MAX && dist[u] + graph[u][v] < dist[v]) {
-                dist[v] = dist[u] + graph[u][v];
+        visited[u] = true;
+
+        for (int v = 0; v < V; v++) {
+            if (!visited[v] && graph[u][v] && distances[u] != INT_MAX && distances[u] + graph[u][v] < distances[v]) {
+                distances[v] = distances[u] + graph[u][v];
             }
         }
     }
 
-    printSolution(dist, 9);
+    printSolution(distances);
 }
 
 int main() {
-    int graph[9][9] = {
+    int graph[V][V] = {
         {0, 4, 0, 0, 0, 0, 0, 8, 0},
         {4, 0, 8, 0, 0, 0, 0, 11, 0},
         {0, 8, 0, 7, 0, 4, 0, 0, 2},

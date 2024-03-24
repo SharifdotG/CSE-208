@@ -2,19 +2,22 @@
 
 using namespace std;
 
-void dfs(int graph[5][5], int start, bool visited[5]) {
+#define V 5 // Change the value of V according to the number of vertices in the graph
+
+void dfs(int graph[V][V], bool visited[V], int start) {
     cout << start << " ";
+
     visited[start] = true;
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < V; i++) {
         if (graph[start][i] == 1 && !visited[i]) {
-            dfs(graph, i, visited);
+            dfs(graph, visited, i);
         }
     }
 }
 
 int main() {
-    int graph[5][5] = {
+    int graph[V][V] = {
         {0, 1, 1, 0, 0},
         {1, 0, 1, 1, 0},
         {1, 1, 0, 0, 1},
@@ -22,9 +25,9 @@ int main() {
         {0, 0, 1, 1, 0}
     };
 
-    bool visited[5] = {false};
+    bool visited[V] = {false};
 
-    dfs(graph, 0, visited);
+    dfs(graph, visited, 0);
 
     return 0;
 }
