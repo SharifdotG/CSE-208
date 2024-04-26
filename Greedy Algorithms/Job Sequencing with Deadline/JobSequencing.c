@@ -59,6 +59,9 @@ int main() {
 }
 
 /*
+Input:
+None
+
 Output:
 Maximum profit sequence of jobs: 1 3 4 
 Maximum profit: 240

@@ -19,18 +19,7 @@ int lcs(string string1, string string2) {
             }
         }
     }
-    // Main code ends here after writing "return dp[n][m]; }"!
 
-    // This is just for printing the DP table
-    cout << "DP Table: " << endl;
-    for (int i = 0; i <= n; i++) {
-        for (int j = 0; j <= m; j++) {
-            cout << dp[i][j] << " ";
-        }
-        cout << endl;
-    }
-
-    // This is for backtracking and printing the LCS
     int length = dp[n][m];
     string lcsString;
 
@@ -61,15 +50,11 @@ int main() {
     return 0;
 }
 
-/* Output:
-DP Table: 
-0 0 0 0 0 0 0 0 
-0 0 0 0 0 1 1 1 
-0 1 1 1 1 1 1 1
-0 1 1 1 1 1 1 1
-0 1 1 2 2 2 2 2
-0 1 1 2 2 3 3 3
-0 1 1 2 2 3 3 4
+/*
+Input:
+None
+
+Output:
 Longest Common Subsequence: GTAB
 Longest Common Subsequence Length: 4
 */

@@ -43,6 +43,9 @@ int main() {
 }
 
 /*
+Input:
+None
+
 Output:
 Maximum value we can obtain: 240
 */
