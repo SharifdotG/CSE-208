@@ -20,10 +20,9 @@ int lcs(string string1, string string2) {
         }
     }
 
-    int length = dp[n][m];
     string lcsString;
-
     int i = n, j = m;
+
     while (i > 0 && j > 0) {
         if (string1[i - 1] == string2[j - 1]) {
             lcsString = string1[i - 1] + lcsString;
@@ -36,9 +35,8 @@ int lcs(string string1, string string2) {
     }
 
     cout << "Longest Common Subsequence: " << lcsString << endl;
-
     cout << "Longest Common Subsequence Length: ";
-    return length;
+    return dp[n][m];
 }
 
 int main() {
