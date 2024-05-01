@@ -50,7 +50,6 @@ int main() {
     int board[10][10] = {0};
 
     if (solveNQueens(board, 0, n)) {
-        
         printf("The solution is: \n");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
