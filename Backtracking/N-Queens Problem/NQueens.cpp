@@ -51,7 +51,6 @@ int main() {
     int board[10][10] = {0};
 
     if (solveNQueens(board, 0, n)) {
-        
         cout << "The solution is: " << endl;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
