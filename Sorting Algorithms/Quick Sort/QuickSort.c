@@ -34,11 +34,11 @@ void quickSort(int array[], int left, int right) {
 
 int main() {
     int array[] = {12, 11, 13, 5, 6, 7};
-    int size = sizeof(array) / sizeof(array[0]);
+    int arraySize = sizeof(array) / sizeof(array[0]);
 
-    quickSort(array, 0, size - 1);
+    quickSort(array, 0, arraySize - 1);
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < arraySize; i++) {
         printf("%d ", array[i]);
     }
     

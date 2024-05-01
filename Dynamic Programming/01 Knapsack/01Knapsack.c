@@ -18,8 +18,7 @@ int knapsack(int weights[], int values[], int n, int capacity) {
             }
         }
     }
-    
-    printf("Maximum value: ");
+
     return dp[n][capacity];
 }
 
@@ -39,5 +38,5 @@ Input:
 None
 
 Output:
-Maximum value: 7
+7
 */
