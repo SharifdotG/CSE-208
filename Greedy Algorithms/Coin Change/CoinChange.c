@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int coinChange(int coins[], int amount, int index, int frequency[]) {
+int coinChange(int coins[], int amount, int index) {
     if (amount == 0) return 0;
 
     if (coins[index] > amount) {
-        return coinChange(coins, amount, index + 1, frequency);
+        return coinChange(coins, amount, index + 1);
     }
 
-    frequency[index]++;
-    return 1 + coinChange(coins, amount - coins[index], index, frequency);
+    return 1 + coinChange(coins, amount - coins[index], index);
 }
 
 int compare(const void *a, const void *b) {
@@ -21,28 +20,17 @@ int main() {
     int amount = 11;
     int n = sizeof(coins) / sizeof(coins[0]);
 
-    int frequency[n];
-    for (int i = 0; i < n; i++) {
-        frequency[i] = 0;
-    }
-
     qsort(coins, n, sizeof(int), compare);
 
-    printf("Minimum number of coins required: %d\n", coinChange(coins, amount, 0, frequency));
-
-    printf("Coins used:\n");
-    for (int i = 0; i < n; i++) {
-        printf("Coin %d used %d times\n", coins[i], frequency[i]);
-    }
+    printf("Minimum number of coins required: %d\n", coinChange(coins, amount, 0));
 
     return 0;
 }
 
 /*
+Input:
+None
+
 Output:
 Minimum number of coins required: 3
-Coins used:
-Coin 5 used 2 times
-Coin 2 used 0 times
-Coin 1 used 1 times
 */

@@ -16,19 +16,7 @@ int knapsack(int weights[], int values[], int n, int capacity) {
             }
         }
     }
-    // Main code ends here after writing "return dp[n][capacity]; }"
 
-    // This is just for printing the DP table
-    cout << "DP Table: " << endl;
-    for (int i = 0; i <= n; i++) {
-        for (int j = 0; j <= capacity; j++) {
-            cout << dp[i][j] << " ";
-        }
-        
-        cout << endl;
-    }
-
-    cout << "Maximum value: ";
     return dp[n][capacity];
 }
 
@@ -43,12 +31,10 @@ int main() {
     return 0;
 }
 
-/* Output:
-DP Table: 
-0 0 0 0 0 0 
-0 0 3 3 3 3
-0 0 3 4 4 7
-0 0 3 4 5 7
-0 0 3 4 5 7
-Maximum value: 7
+/*
+Input:
+None
+
+Output:
+7
 */

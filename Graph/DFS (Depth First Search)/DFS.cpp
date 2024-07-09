@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define V 5 // Change the value of V according to the number of vertices in the graph
+#define V 5
 
 void dfs(int graph[V][V], bool visited[V], int start) {
     cout << start << " ";
@@ -33,6 +33,9 @@ int main() {
 }
 
 /*
+Input:
+None
+
 Output:
 0 1 2 4 3
 */

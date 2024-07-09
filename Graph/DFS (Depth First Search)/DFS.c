@@ -31,6 +31,9 @@ int main() {
 }
 
 /*
+Input:
+None
+
 Output:
 0 1 2 4 3
 */

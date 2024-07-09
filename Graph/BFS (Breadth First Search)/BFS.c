@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define V 5 // Change the value of V according to the number of vertices in the graph
+#define V 5
 
 void bfs(int graph[V][V], int start) {
     int queue[V];
@@ -41,6 +41,9 @@ int main() {
 
 
 /*
+Input:
+None
+
 Output:
 0 1 2 3 4
 */

@@ -9,6 +9,7 @@ struct Item {
 bool compare(Item item1, Item item2) {
     double ratio1 = (double) item1.value / item1.weight;
     double ratio2 = (double) item2.value / item2.weight;
+    
     return ratio1 > ratio2;
 }
 
@@ -43,6 +44,9 @@ int main() {
 }
 
 /*
+Input:
+None
+
 Output:
 Maximum value we can obtain: 240
 */

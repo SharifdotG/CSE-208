@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define V 9 // Change V according to the number of vertices in the graph
+#define V 9
 
 int minDistance(int distances[], bool visited[]) {
     int minDistance = INT_MAX, minVertexIndex;
@@ -67,3 +67,20 @@ int main() {
 
     return 0;
 }
+
+/*
+Input:
+None
+
+Output:
+Vertex   Distance from Source
+0                0
+1                4
+2                12
+3                19
+4                21
+5                11
+6                9
+7                8
+8                14
+*/

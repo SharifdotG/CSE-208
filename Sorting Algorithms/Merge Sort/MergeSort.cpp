@@ -70,6 +70,10 @@ int main() {
 }
 
 /*
+Input:
+None
+
 Output:
 5 6 7 11 12 13
 */
+>>>>>>> 95d70b4281018478501f4e0d5cc6ca409c62ae3d:Sorting Algorithms/Merge Sort/MergeSort.cpp
