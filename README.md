@@ -15,13 +15,13 @@ This course is designed to provide students with a solid foundation and hands on
 
 ## Table of Contents
 
-- **[Sorting Algorithms](/Sorting%20Algorithms/): Contains the codes for Merge and Quick Sort algorithm.
-- **[Searching Algorithms](/Searching%20Algorithms/): Contains the codes for Binary Search and Ternary Search algorithm.
-- **[Dynamic Programming](/Dynamic%20Programming/): Contains the codes for 01 Knapsack and Longest Common Subsequence algorithm.
-- **[Greedy Algorithms](/Greedy%20Algorithms/): Contains the codes for Coin Change, Fractional Knapsack and Job Sequencing with Deadlines algorithm.
-- **[Graph Algorithms](/Graph/): Contains the codes for BFS, DFS, Dijkstra's and Bellman-Ford algorithm.
-- **[Backtracking](/Backtracking/): Contains the codes for N-Queens and Graph Coloring algorithm.
-- **[Branch and Bound](/Branch%20and%20Bound/): Contains the codes for the 15-Puzzle Problem algorithm.
-- **[String Matching](/String%20Matching/): Contains the codes for Rabbin-Karp algorithm.
-- **[Approximation Algorithms](/Approximation%20Algorithms/): Contains the codes for Travelling Salesman Problem, Vertex Cover and Subset Sum algorithm.
-- **[README.md](/README.md)**: Contains the description of the repository.
+- **[Sorting Algorithms](/Sorting%20Algorithms/)**: Contains the codes for Merge and Quick Sort.
+- **[Searching Algorithms](/Searching%20Algorithms/)**: Contains the codes for Binary Search and Ternary Search.
+- **[Dynamic Programming](/Dynamic%20Programming/)**: Contains the codes for 01 Knapsack and Longest Common Subsequence.
+- **[Greedy Algorithms](/Greedy%20Algorithms/)**: Contains the codes for Coin Change, Fractional Knapsack and Job Sequencing with Deadlines.
+- **[Graph Algorithms](/Graph/)**: Contains the codes for BFS, DFS, Dijkstra's and Bellman-Ford Algorithm.
+- **[Backtracking](/Backtracking/)**: Contains the codes for N-Queens and Graph Coloring Algorithm.
+- **[Branch and Bound](/Branch%20and%20Bound/)**: Contains the codes for the 15-Puzzle Problem.
+- **[String Matching](/String%20Matching/)**: Contains the codes for Rabbin-Karp Algorithm.
+- **[Approximation Algorithms](/Approximation%20Algorithms/)**: Contains the codes for Travelling Salesman Problem, Vertex Cover and Subset Sum Algorithm.
+- **[README.md](/README.md)**: Contains the description of the repository (This file).
